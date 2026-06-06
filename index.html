@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Taipei — a short eating &amp; walking guide</title>
+<meta name="description" content="A short, opinionated guide to eating and walking in Taipei. Buns, congee, sushi, and two hikes." />
+<meta name="theme-color" content="#b23a2e" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Spectral:ital,wght@0,400;0,600;1,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #1d1a17;
+    --ink-soft: #5b534b;
+    --paper: #f7f1e6;
+    --paper-2: #fffaf1;
+    --line: #e3d8c4;
+    --accent: #b23a2e;
+    --accent-soft: #c8623a;
+    --jade: #2f6b54;
+    --shadow: 0 1px 2px rgba(40, 30, 20, .06), 0 8px 24px rgba(40, 30, 20, .06);
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Work Sans", system-ui, -apple-system, sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .zh { font-family: "Noto Sans TC", system-ui, sans-serif; }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ---------- Header ---------- */
+  header.hero {
+    background:
+      radial-gradient(120% 80% at 80% -10%, rgba(200, 98, 58, .18), transparent 60%),
+      linear-gradient(180deg, var(--paper-2), var(--paper));
+    border-bottom: 1px solid var(--line);
+    padding: calc(env(safe-area-inset-top, 0px) + 56px) 0 40px;
+    text-align: center;
+  }
+  .kicker {
+    font-size: 13px;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0 0 14px;
+  }
+  h1 {
+    font-family: "Spectral", Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(38px, 9vw, 64px);
+    line-height: 1.02;
+    margin: 0;
+    letter-spacing: -.01em;
+  }
+  h1 .zh {
+    display: block;
+    font-weight: 900;
+    font-size: clamp(30px, 7vw, 48px);
+    margin-top: 8px;
+    color: var(--ink);
+  }
+  .tip {
+    margin: 26px auto 0;
+    max-width: 460px;
+    font-size: 15px;
+    color: var(--ink-soft);
+    background: var(--paper-2);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 14px 18px;
+    box-shadow: var(--shadow);
+  }
+  .tip b { color: var(--ink); }
+
+  /* ---------- Section nav ---------- */
+  nav.jump {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: rgba(247, 241, 230, .88);
+    backdrop-filter: saturate(160%) blur(10px);
+    -webkit-backdrop-filter: saturate(160%) blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav.jump .wrap {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    scrollbar-width: none;
+  }
+  nav.jump .wrap::-webkit-scrollbar { display: none; }
+  nav.jump a {
+    flex: 0 0 auto;
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    color: var(--ink-soft);
+    background: var(--paper-2);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 7px 14px;
+    white-space: nowrap;
+  }
+  nav.jump a:hover { color: var(--accent); text-decoration: none; border-color: var(--accent-soft); }
+
+  /* ---------- Sections ---------- */
+  main { padding: 8px 0 40px; }
+
+  .section { padding-top: 44px; }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 4px;
+  }
+  .section-head h2 {
+    font-family: "Spectral", Georgia, serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0;
+  }
+  .section-head .rule {
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .aside {
+    font-style: italic;
+    font-family: "Spectral", Georgia, serif;
+    color: var(--ink-soft);
+    font-size: 16px;
+    margin: 18px 2px 0;
+  }
+
+  /* ---------- Cards ---------- */
+  .card {
+    background: var(--paper-2);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 22px 22px 20px;
+    margin-top: 18px;
+    box-shadow: var(--shadow);
+  }
+  .card .name {
+    font-family: "Spectral", Georgia, serif;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 1.2;
+    margin: 0;
+  }
+  .card .name .area {
+    color: var(--ink-soft);
+    font-weight: 400;
+    font-size: .82em;
+  }
+
+  /* Tappable Chinese name — enlarge to show a driver */
+  .show-driver {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    border: 1px dashed var(--accent-soft);
+    background: rgba(200, 98, 58, .07);
+    color: var(--accent);
+    border-radius: 12px;
+    padding: 9px 14px;
+    font-family: inherit;
+    font-size: 15px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .show-driver:hover { background: rgba(200, 98, 58, .13); }
+  .show-driver .zh { font-size: 21px; font-weight: 700; color: var(--ink); }
+  .show-driver .hint { font-size: 12px; letter-spacing: .04em; opacity: .8; }
+
+  .meta {
+    margin: 14px 0 0;
+    color: var(--ink-soft);
+    font-size: 15px;
+  }
+  .meta .addr { color: var(--ink); }
+
+  .try {
+    margin: 12px 0 0;
+    padding: 12px 14px;
+    background: rgba(47, 107, 84, .07);
+    border-left: 3px solid var(--jade);
+    border-radius: 0 10px 10px 0;
+    font-size: 15.5px;
+  }
+  .try b { color: var(--jade); letter-spacing: .02em; }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .tag {
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: .03em;
+    color: var(--ink-soft);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 4px 11px;
+  }
+  .tag.warn { color: var(--accent); border-color: var(--accent-soft); background: rgba(178, 58, 46, .06); }
+  .tag.map { color: var(--accent); }
+  .tag.map:hover { background: rgba(178, 58, 46, .1); text-decoration: none; }
+
+  .note {
+    margin-top: 12px;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    text-align: center;
+    padding: 48px 0 calc(env(safe-area-inset-bottom, 0px) + 48px);
+    border-top: 1px solid var(--line);
+    margin-top: 48px;
+  }
+  footer .sign {
+    font-family: "Spectral", Georgia, serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--ink);
+  }
+  footer .src { margin-top: 14px; font-size: 13px; color: var(--ink-soft); }
+
+  /* ---------- Driver overlay ---------- */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    place-items: center;
+    background: rgba(20, 16, 12, .78);
+    backdrop-filter: blur(4px);
+    padding: 24px;
+    text-align: center;
+  }
+  .overlay.open { display: grid; }
+  .overlay-card {
+    background: var(--paper-2);
+    border-radius: 22px;
+    padding: 40px 28px 32px;
+    max-width: 560px;
+    width: 100%;
+    box-shadow: 0 30px 80px rgba(0,0,0,.4);
+  }
+  .overlay .ov-label {
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .overlay .ov-zh {
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 900;
+    font-size: clamp(44px, 13vw, 88px);
+    line-height: 1.1;
+    margin: 16px 0 8px;
+    color: var(--ink);
+  }
+  .overlay .ov-en {
+    font-family: "Spectral", Georgia, serif;
+    font-size: 19px;
+    color: var(--ink-soft);
+  }
+  .overlay .ov-addr {
+    margin-top: 18px;
+    font-size: 17px;
+    color: var(--ink);
+  }
+  .overlay .ov-addr .zh { display:block; font-weight:500; margin-top:4px; }
+  .overlay .ov-close {
+    margin-top: 28px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--ink);
+    border-radius: 999px;
+    padding: 12px 26px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .overlay .ov-close:hover { background: var(--paper); border-color: var(--accent-soft); color: var(--accent); }
+
+  @media (max-width: 480px) {
+    body { font-size: 16px; }
+    .card { padding: 18px 16px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Eating &amp; Walking</p>
+    <h1>Taipei<span class="zh">台北</span></h1>
+    <p class="tip">
+      <b>Tip:</b> tap any <span class="zh">中文</span> name to show it full-screen to your
+      taxi / Uber driver — and carry <b>cash</b> (several spots are cash-only).
+    </p>
+  </div>
+</header>
+
+<nav class="jump">
+  <div class="wrap">
+    <a href="#buns">Buns &amp; Morning</a>
+    <a href="#congee">Congee</a>
+    <a href="#sushi">Sushi &amp; Seafood</a>
+    <a href="#walks">A Walk</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <!-- ===================== BUNS ===================== -->
+  <section id="buns" class="section">
+    <div class="section-head">
+      <h2>Buns &amp; Morning Bites</h2>
+      <span class="rule"></span>
+    </div>
+
+    <article class="card">
+      <p class="name">Confucius Steamed Bun / Kongzi Mantou <span class="area">· Dazhi</span></p>
+      <button class="show-driver" data-zh="孔子饅頭" data-en="Kongzi Mantou" data-addr-en="No. 2, Lane 621, Beian Rd, Zhongshan District" data-addr-zh="中山區北安路621巷2號">
+        <span class="zh">孔子饅頭</span>
+        <span class="hint">tap to show driver ▸</span>
+      </button>
+      <p class="meta"><span class="addr">No. 2, Lane 621, Beian Rd, Zhongshan District</span> — MRT Dazhi</p>
+      <p class="try"><b>Try</b> the pumpkin-cheese or longan mantou (<span class="zh">南瓜起司 / 桂圓</span>).</p>
+      <div class="tags">
+        <span class="tag warn">Closed Sundays</span>
+        <a class="tag map" href="https://www.google.com/maps/search/?api=1&query=%E5%AD%94%E5%AD%90%E9%A5%85%E9%A0%AD%20%E5%A4%A7%E7%9B%B4" target="_blank" rel="noopener">Map ↗</a>
+      </div>
+    </article>
+
+    <p class="aside">…or, if you're out east —</p>
+
+    <article class="card">
+      <p class="name">Doupuzi <span class="area">· Neihu (Kangning branch)</span></p>
+      <button class="show-driver" data-zh="豆舖子（康寧店）" data-en="Doupuzi (Kangning)" data-addr-en="No. 20-1, Sec. 3, Kangning Rd, Neihu District" data-addr-zh="內湖區康寧路三段20-1號">
+        <span class="zh">豆舖子（康寧店）</span>
+        <span class="hint">tap to show driver ▸</span>
+      </button>
+      <p class="meta"><span class="addr">No. 20-1, Sec. 3, Kangning Rd, Neihu District</span> — MRT Donghu</p>
+      <p class="try"><b>Try</b> the soybean pudding (<span class="zh">豆花</span>) with taro balls, brown-sugar pearls &amp; handmade brown-sugar gel (<span class="zh">黑糖粿</span>), plus the steamed buns.</p>
+      <div class="tags">
+        <a class="tag map" href="https://www.google.com/maps/search/?api=1&query=%E8%B1%86%E8%88%96%E5%AD%90%20%E5%BA%B7%E5%AF%A7" target="_blank" rel="noopener">Map ↗</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <p class="name">Tianjin Scallion Pancake <span class="area">· Da'an</span></p>
+      <button class="show-driver" data-zh="天津蔥抓餅" data-en="Tianjin Scallion Pancake" data-addr-en="No. 1, Lane 6, Yongkang St, Da'an District" data-addr-zh="大安區永康街6巷1號">
+        <span class="zh">天津蔥抓餅</span>
+        <span class="hint">tap to show driver ▸</span>
+      </button>
+      <p class="meta"><span class="addr">No. 1, Lane 6, Yongkang St, Da'an District</span> — MRT Dongmen</p>
+      <p class="try"><b>Try</b> basil + egg + cheese (<span class="zh">九層塔＋蛋＋起司</span>).</p>
+      <div class="tags">
+        <span class="tag warn">Cash only</span>
+        <span class="tag">Short queue</span>
+        <span class="tag">8am–10pm</span>
+        <a class="tag map" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A9%E6%B4%A5%E8%94%A5%E6%8A%93%E9%A4%85%20%E6%B0%B8%E5%BA%B7%E8%A1%97" target="_blank" rel="noopener">Map ↗</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- ===================== CONGEE ===================== -->
+  <section id="congee" class="section">
+    <div class="section-head">
+      <h2>Congee</h2>
+      <span class="rule"></span>
+    </div>
+
+    <article class="card">
+      <p class="name">Congee Kingdom <span class="area">· Dazhi</span></p>
+      <button class="show-driver" data-zh="大直粥品" data-en="Congee Kingdom" data-addr-en="No. 567, Beian Rd, Zhongshan District" data-addr-zh="中山區北安路567號">
+        <span class="zh">大直粥品</span>
+        <span class="hint">tap to show driver ▸</span>
+      </button>
+      <p class="meta"><span class="addr">No. 567, Beian Rd, Zhongshan District</span> — across from MRT Dazhi</p>
+      <p class="try"><b>Try</b> the milkfish congee (<span class="zh">虱目魚粥</span>).</p>
+      <p class="note">Right next door to Kongzi Mantou — easy to do both in one Dazhi stop.</p>
+      <div class="tags">
+        <a class="tag map" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E7%9B%B4%E7%B2%A5%E5%93%81" target="_blank" rel="noopener">Map ↗</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- ===================== SUSHI ===================== -->
+  <section id="sushi" class="section">
+    <div class="section-head">
+      <h2>Sushi &amp; Seafood</h2>
+      <span class="rule"></span>
+    </div>
+
+    <article class="card">
+      <p class="name">Addiction Aquatic Development <span class="area">· Zhongshan</span></p>
+      <button class="show-driver" data-zh="上引水產" data-en="Addiction Aquatic Development" data-addr-en="No. 18, Alley 2, Lane 410, Minzu E Rd, Zhongshan District" data-addr-zh="中山區民族東路410巷2弄18號">
+        <span class="zh">上引水產</span>
+        <span class="hint">tap to show driver ▸</span>
+      </button>
+      <p class="meta"><span class="addr">No. 18, Alley 2, Lane 410, Minzu E Rd, Zhongshan District</span> — taxi is easiest</p>
+      <p class="try">A seafood market with a standing sushi bar.</p>
+      <div class="tags">
+        <span class="tag warn">Cash</span>
+        <span class="tag">7am–10:30pm</span>
+        <a class="tag map" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%8A%E5%BC%95%E6%B0%B4%E7%94%A2" target="_blank" rel="noopener">Map ↗</a>
+      </div>
+    </article>
+
+    <p class="aside">Sushi, generally: just walk into any place that looks good — they're all surprisingly good.</p>
+  </section>
+
+  <!-- ===================== WALKS ===================== -->
+  <section id="walks" class="section">
+    <div class="section-head">
+      <h2>A Walk</h2>
+      <span class="rule"></span>
+    </div>
+
+    <article class="card">
+      <p class="name">Zhishan Yan Huiji Temple <span class="area">· Shilin</span></p>
+      <button class="show-driver" data-zh="芝山岩惠濟宮" data-en="Zhishan Yan Huiji Temple" data-addr-en="No. 26, Lane 326, Sec. 1, Zhicheng Rd, Shilin District" data-addr-zh="士林區至誠路一段326巷26號">
+        <span class="zh">芝山岩惠濟宮</span>
+        <span class="hint">tap to show driver ▸</span>
+      </button>
+      <p class="meta"><span class="addr">No. 26, Lane 326, Sec. 1, Zhicheng Rd, Shilin District</span> — MRT Zhishan</p>
+      <p class="try"><b>Walk</b> ~200 stone steps up a little jungly knoll, past the Eighteen Arhats (<span class="zh">十八羅漢</span>) on their animal mounts and the old Qing-era fort gates, to a hilltop temple.</p>
+      <div class="tags">
+        <span class="tag">Open 6am–7pm</span>
+        <span class="tag">~30–45 min round trip</span>
+        <a class="tag map" href="https://www.google.com/maps/search/?api=1&query=%E8%8A%9D%E5%B1%B1%E5%B2%A9%E6%83%A0%E6%BF%9F%E5%AE%AE" target="_blank" rel="noopener">Map ↗</a>
+      </div>
+    </article>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="sign">Eat slowly, and take the long way home.</p>
+    <p class="src">A short guide to Taipei · <a href="https://thomasbrownback.com">thomasbrownback.com</a></p>
+  </div>
+</footer>
+
+<!-- Driver overlay -->
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="Show this to your driver">
+  <div class="overlay-card">
+    <p class="ov-label">Please take me here</p>
+    <p class="ov-zh zh" id="ov-zh"></p>
+    <p class="ov-en" id="ov-en"></p>
+    <p class="ov-addr" id="ov-addr"></p>
+    <button class="ov-close" id="ov-close" type="button">Done</button>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var overlay = document.getElementById('overlay');
+    var ovZh = document.getElementById('ov-zh');
+    var ovEn = document.getElementById('ov-en');
+    var ovAddr = document.getElementById('ov-addr');
+    var close = document.getElementById('ov-close');
+
+    function open(btn) {
+      ovZh.textContent = btn.dataset.zh || '';
+      ovEn.textContent = btn.dataset.en || '';
+      var en = btn.dataset.addrEn || '';
+      var zh = btn.dataset.addrZh || '';
+      ovAddr.innerHTML = (en ? en : '') + (zh ? '<span class="zh">' + zh + '</span>' : '');
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function hide() {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.show-driver').forEach(function (btn) {
+      btn.addEventListener('click', function () { open(btn); });
+    });
+    close.addEventListener('click', hide);
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) hide(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hide(); });
+  })();
+</script>
+
+</body>
+</html>
